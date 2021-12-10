@@ -16,7 +16,11 @@ namespace RazorPage
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages(); // 1.1 Register Razor Page Service
+            services.AddRazorPages().AddRazorPagesOptions(options =>
+            {
+                options.RootDirectory = "/Pages"; // 2.1 Change folder name
+                options.Conventions.AddPageRoute("/FirstPage", "/first-page.html"); // 2.2 Add a new url (/first-page.html) for FirstPage
+            }); // 1.1 Register Razor Page Service
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

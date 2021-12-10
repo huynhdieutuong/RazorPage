@@ -4,3 +4,4 @@
 2. `@variableName` or `@(expression)` or `@method`
 3. `@{ code c# here }`
 4. `@for`
+5. Change /FirstPage to /first-page : `@page "/first-page"`
