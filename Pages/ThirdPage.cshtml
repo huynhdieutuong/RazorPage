@@ -1,2 +1,22 @@
 @page "/third-page"
+
 <h1 style="color: green;">This is the third page</h1>
+
+@* By default, Microsoft.AspNetCore.Mvc.RazorPages.Page has ViewData, which can transfer data between Methods *@
+<h2>@ViewData["mydata"]</h2>
+
+@functions{
+  // OnGet Handler is similar ComponentDidMount
+  // OnGetAbc, OnGetXyz,...
+  // OnPut, OnPost, OnDelete - call api which methods: PUT, POST, DELETE
+  public void OnGet() {
+    System.Console.WriteLine("On Get Run Firstly");
+    ViewData["mydata"] = "This is My Data";
+  }
+
+  // GET https://localhost:5001/third-page?handler=Abc
+  public void OnGetAbc() {
+    System.Console.WriteLine("On Get ABC Run");
+    ViewData["mydata"] = "This is My Data ABC";
+  }
+}
