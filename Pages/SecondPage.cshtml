@@ -1,15 +1,8 @@
 @page "/second-page"
+@model SecondPageModel
 
 <h1>This is the second page</h1>
 
-<h2>@this.Title</h2>
+<h2>@Model.Title</h2>
 
-<p>@this.Welcome("Tuong")</p>
-
-@functions{
-  string Title { get; set; } = "This is the Title Property";
-
-  string Welcome(string name) {
-    return $"Welcome {name}";
-  }
-}
+<p>@Model.Welcome("Tuong")</p>
