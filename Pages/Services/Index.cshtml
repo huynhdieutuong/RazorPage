@@ -1,2 +1,11 @@
 @page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 <h1>Services</h1>
+
+<a href="/services/service-1">Service 1</a>
+
+@* using TagHelpers to auto get url at Service1.cshtml *@
+<a asp-page="Service1">Service One</a>
+
+<a asp-page="Service2">Service Two</a>
