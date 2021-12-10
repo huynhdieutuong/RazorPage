@@ -1,4 +1,9 @@
 @page "/first-page/{abc:int?}"
+@{
+  Layout = "_MyLayout";
+  ViewData["Title"] = "First Page";
+}
+
 <h1 style="color: red;">This is the first Razor Page</h1>
 <p>Learn ASP.NET Core <strong>(@System.DateTime.Now)</strong></p>
 
