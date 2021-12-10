@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -21,6 +22,11 @@ namespace RazorPage
                 options.RootDirectory = "/Pages"; // 2.1 Change folder name
                 options.Conventions.AddPageRoute("/FirstPage", "/first-page.html"); // 2.2 Add a new url (/first-page.html) for FirstPage
             }); // 1.1 Register Razor Page Service
+
+            services.Configure<RouteOptions>(routeOptions =>
+            {
+                routeOptions.LowercaseUrls = true; // 3.1 Convert all urls to lower case
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

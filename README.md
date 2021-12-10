@@ -11,3 +11,8 @@
 - Add type = int for abc: `{abc:int}`
 - Not required abc: `{abc:int?}`
 - Read abc, if not abc, value = 0 : `this.Request.RouteValues["abc"]??"0"` => return object
+
+7. Also use `Areas` folder to store specific pages
+   > Areas/Product/Pages/Index.cshtml => /product \
+   > Areas/Product/Pages/NewProduct.cshtml => /product/newproduct \
+   > Also use `@page "/login"` : Areas/User/Pages/Login.cshtml => /login
